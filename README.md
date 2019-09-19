@@ -37,7 +37,7 @@ Figure below shows:
 
 * **Add latency of MPC calculations** There should be a delay from the time MPC gets (x,v) and the time it outputs a solution.
 
-* **Can we learn system parameters from observations?** Use optimal estimation, system identification, or machine learning to find system parameters (`k`, `m`, `c`) from observing uncontrolled/controlled system. Can also be done as reinforcement learning, when parameter estimation and control towards an objective are done at once (balancing exploration-vs-exploitation, as opposed to doing only exploration).
+* **Can we learn system parameters from observations?** Use optimal estimation, system identification, or machine learning to find system parameters (`k`, `m`, `c`) from observing uncontrolled/controlled system. Can also be done as reinforcement learning. Could also balance exploration-vs-exploitation, as opposed to only doing exploration.
 
 ## Dependencies
 * [YALMIP](https://yalmip.github.io/)
