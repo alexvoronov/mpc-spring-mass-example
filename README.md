@@ -40,7 +40,7 @@ Figure below shows:
 * **Can we learn system parameters from observations?** Use optimal estimation, system identification, or machine learning to find system parameters (`k`, `m`, `c`) from observing uncontrolled/controlled system. Can also be done as reinforcement learning, when parameter estimation and control towards an objective are done at once (balancing exploration-vs-exploitation, as opposed to doing only exploration).
 
 ## Dependencies
-YALMIP, tight_subplot, export_fig, linprog ([Optimization toolbox](https://se.mathworks.com/products/optimization.html)) or any [YALMIP-supported](https://yalmip.github.io/allsolvers/) [LP](https://en.wikipedia.org/wiki/Linear_programming)-capable solver (some [QP](https://en.wikipedia.org/wiki/Quadratic_programming)/[SOCP](https://en.wikipedia.org/wiki/Second-order_cone_programming) solvers handle LP just fine).
+YALMIP, tight_subplot, export_fig, linprog ([Optimization toolbox](https://se.mathworks.com/products/optimization.html)) or any [YALMIP-supported](https://yalmip.github.io/allsolvers/), [LP](https://en.wikipedia.org/wiki/Linear_programming)-capable solver (some [QP](https://en.wikipedia.org/wiki/Quadratic_programming)/[SOCP](https://en.wikipedia.org/wiki/Second-order_cone_programming) solvers handle LP just fine).
 
 ## License
 MIT.
