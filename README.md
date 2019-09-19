@@ -10,8 +10,7 @@ For linear springs, the force is `k*r`, where `r` is displacement. For non-linea
 |__/\/\__|       |__/\/\__|       |_ ... _/\/\__|       |__/\/\__|
 |        |  m_1  |        |  m_2  |             |  m_M  |        |
 |  u1 -->|_______|        |_______|             |_______|--> u2  |   x
-==================================== ... ========================= -->
-           -(c)-            -(c)-                 -(c)-          
+============(c)==============(c)====== ... ========(c)================== -->
 ```
 
 System dynamics is as following:
@@ -34,12 +33,14 @@ Figure below shows:
 
 * **Make controller aware of spring non-linearity:** Linearize non-linear terms around the solution from the previous MPC iteration.
 
-* **Consider more realistic noise:** Add noise to all elements. Something that would perhaps mimic gusts of wind, or temperature effects on spring and friction coefficients.
+* **Consider more realistic noise:** Add noise to all elements. Something that would perhaps mimic gusts of wind, or temperature effects on spring and friction coefficients. Also, try giving "noisy" system parameters (`k`, `m`, `c`, `x`, `v`) to the MPC solver.
 
 * **Add latency of MPC calculations** There should be a delay from the time MPC gets (x,v) and the time it outputs a solution.
 
+* **Can we learn system parameters from observations?** Use optimal estimation, system identification, or machine learning to find system parameters (`k`, `m`, `c`) from observing uncontrolled/controlled system. Can also be done as reinforcement learning, when parameter estimation and control towards an objective are done at once (balancing exploration-vs-exploitation, as opposed to doing only exploration).
+
 ## Dependencies
-[YALMIP](https://yalmip.github.io/), [tight_subplot](https://se.mathworks.com/matlabcentral/fileexchange/27991-tight_subplot-nh-nw-gap-marg_h-marg_w), [export_fig](https://github.com/altmany/export_fig).
+YALMIP, tight_subplot, export_fig, linprog ([Optimization toolbox](https://se.mathworks.com/products/optimization.html)) or any [YALMIP-supported](https://yalmip.github.io/allsolvers/) [LP](https://en.wikipedia.org/wiki/Linear_programming)-capable solver (some [QP](https://en.wikipedia.org/wiki/Quadratic_programming)/[SOCP](https://en.wikipedia.org/wiki/Second-order_cone_programming) solvers handle LP just fine).
 
 ## License
 MIT.
